@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170531104349) do
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "recordings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "recordings", force: :cascade do |t|
     t.integer  "location_id"
     t.integer  "temp"
     t.string   "status"
