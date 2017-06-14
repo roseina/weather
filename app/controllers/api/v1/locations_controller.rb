@@ -1,5 +1,5 @@
 class Api::V1::LocationsController < ApplicationController
-  before_action :set_location
+  before_action :set_location, except: :index
 
   # select all, ctrl-> a, ctrl + shift + i to auto indent all
 
